@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <style>
+    body{
+      background:#0f172a;
+      color:white;
+      font-family:Arial;
+      text-align:center;
+      padding-top:70px;
+    }
+    input,button{
+      width:80%;
+      max-width:300px;
+      padding:12px;
+      margin:10px;
+      border:none;
+      border-radius:8px;
+    }
+    button{
+      background:#22c55e;
+      font-size:16px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Player Login</h2>
+
+<input id="uid" type="text" placeholder="Enter Free Fire UID">
+<br>
+<button onclick="login()">Login</button>
+
+<p id="msg"></p>
+
+<script>
+function login(){
+  var uid = document.getElementById("uid").value;
+
+  if(uid === ""){
+    document.getElementById("msg").innerText = "UID required!";
+    return;
+  }
+
+  localStorage.setItem("playerUID", uid);
+  window.location.href = "success.html";
+}
+</script>
+
+</body>
+</html>
